@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Store Info</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Poppins|Roboto|PT+Sans&display=swap" rel="stylesheet">
+    <style>
+        #mainnav{
+			background: #5CDB95;
+			transition: 300ms;
+			width: 100%;
+		}
+
+		.hide {
+			display: none;
+		}
+
+		#acmicon{
+			width: 120px;
+		}
+
+		.nav-item {
+			display: flex;
+			align-items: center;
+			margin-left: 24px;
+		}
+		.nav-link {
+			font-family: 'Poppins', sans-serif;
+			font-weight: bold;
+			font-size: 24px;
+			text-align: center;
+			color: #05386B;
+		}
+
+		.btn-nav-link {
+			padding: 0;
+		}
+
+		.img-container {
+			justify-content: center;
+			display: flex;
+		}
+
+		input, textarea {
+			border-color: #5CDB95 !important;
+			font-family: Roboto;
+		}
+		label {
+			text-align: right;
+			padding-right: 35px !important;
+			font-family: PT Sans;
+			font-weight: bold;
+		}
+		button.add {
+			margin-bottom: 50px;
+			border-radius: 50%;
+			border: none;
+			width: 40px;
+			height: 40px;
+			background: #5CDB95;
+			font-weight: bold;
+			color: white;
+		}
+		.action-btn-container {
+			display: flex;
+			justify-content: space-around;
+		}
+		.action-btn-container button {
+			min-width: 100px;
+			height: 40px;
+			border-radius: 10px;
+			font-family: Poppins;
+			border: none;			
+			font-weight: bold;
+			color: white;
+			font-size: 20px;
+		}
+
+		button#edit {
+			background: #5CDB95;
+		}
+		button#cancel {
+			display: none;
+			background: none;
+			border: 2px solid #5CDB95;
+			color: black;
+			font-weight: normal;
+		}
+		button#save {
+			display: none;
+			background: #5CDB95;
+		}
+    </style>
+</head>
+
+<body>
+    <div id="main-container">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-shrink" id="mainnav">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#hero"><img src="images/svce_acm_2.png" id="acmicon"></a>
+                <button class="navbar-toggler is-closed" type="button">
+                    <i class="material-icons" id="menu-icon">menu</i>
+                    <i class="material-icons hide" id="close-icon">close</i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a href="#" class="nav-link" style="color: white;">Store Info</a></li><!-- .nav-item -->
+                        <li class="nav-item"><a href="stats.html" class="nav-link">View Stats</a></li><!-- .nav-item -->
+                        <li class="nav-item">
+                            <a href="" class="nav-link">Logout</a>
+                        </li><!-- .nav-item -->
+                    </ul>
+                </div>
+            </div><!-- .container -->
+        </nav>
+        <section id="" style="margin-top: 80px;">
+            <div class="container">
+                <div class="img-container">
+                    <img src="https://d166yc1y344avn.cloudfront.net/outletlogo/Zara.jpg" alt="">
+                </div><!-- .img-container -->
+                <form action="">
+                    <div class="form-group row">
+                        <label for="name" class="col-sm-5">Name</label>
+                        <input type="text" class="form-control col-sm-6" name="name" placeholder="Enter store's name" required>
+                    </div>
+                    <div class="form-group row">
+                        <label for="name" class="col-sm-5">Description</label>
+                        <textarea type="text" class="form-control col-sm-6" name="description" placeholder="Enter store's description" required rows="10"></textarea>
+                    </div>
+                    <div class="form-group row">
+                        <label for="name" class="col-sm-5">Offers</label>
+                        <input type="text" class="form-control col-sm-6" name="offer0" placeholder="Enter offer" required>
+                    </div>
+                    <div class="form-group row">
+                        <input type="text" class="form-control offset-sm-5 col-sm-6" name="offer1" placeholder="Enter offer" required>
+                    </div>
+                    <div class="form-group row">
+                        <input type="text" class="form-control offset-sm-5 col-sm-6" name="offer2" placeholder="Enter offer" required>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-1 offset-sm-5"><button class="add">+</button></div><!-- .col-sm-1 offset-sm-6 -->
+                    </div><!-- .row -->
+                    <div class="form-group row">
+                        <label for="name" class="col-sm-5">Contact</label>
+                        <textarea type="text" class="form-control col-sm-6" name="contact" placeholder="Enter store's contact info" required rows="6"></textarea>
+                    </div>
+                    <div class="action-btn-container">
+                        <button id="edit">Edit</button>
+                        <button id="cancel">Cancel</button>
+                        <button id="save">Save</button>
+                    </div><!-- .action-btn-container -->
+                </form>
+            </div><!-- .container -->
+        </section><!-- .jumbotron -->
+    </div><!-- #main-container -->
+</body>
+
+</html>

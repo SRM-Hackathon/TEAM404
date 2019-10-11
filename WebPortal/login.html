@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Login</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div id="main-container">
+		<!-- <div id="login-box"> -->
+			<form action="#">
+			<div class="img-container"><img src="https://svce.acm.org/images/logos/herologo.svg" alt="" height="100"></div><!-- .img-container -->
+				<div class="form-element">
+					<input type="text" name="username" placeholder="Enter your username">
+				</div><!-- .form-element -->
+				<div class="form-element">
+					<input type="password" name="password" placeholder="Enter password">
+				</div><!-- .form-element -->
+				<div id="form-btn-container">
+					<button type="submit" id="submit">Login</button>
+				</div><!-- .form-btn-container -->
+			</form>
+		<!-- </div>#login-box -->
+	</div><!-- #main-container -->
+	<style>
+		#main-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+		#login-box {
+			display: flex;
+			flex-direction: column;
+		}
+		#form-btn-container {
+			display: flex;
+			justify-content: center;
+		}
+		.img-container {
+			display: flex;
+			justify-content: center;
+			margin-bottom: 40px;
+		}
+		form {
+			min-height: 450px;
+			min-width: 450px;
+			display: flex;
+		    flex-direction: column;
+		    justify-content: center;
+		    align-items: center;
+		    background: #FFFFFF;
+			border: 2px solid #5CDB95;
+			box-sizing: border-box;
+			border-radius: 50px;
+		}
+		input {
+			font-family: Roboto;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 20px;
+			line-height: 23px;
+			padding: 10px;
+			height: 35px;
+			width: 250px;
+			border: 1px solid #8EE4AF;
+		}
+		.form-element {
+			margin-bottom: 25px;
+		}
+		button#submit {
+			background: #5CDB95;
+			border-radius: 10px;
+			min-width: 130px;
+			height: 60px;
+			border: none;
+			font-family: Roboto;
+			font-style: normal;
+			font-weight: bold;
+			font-size: 32px;
+			line-height: 23px;
+			color: #fff;
+			cursor: pointer;
+		}
+	</style>
+</body>
+</html>

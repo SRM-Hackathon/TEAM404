@@ -8,8 +8,8 @@
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="match_parent"
+        android:prompt="@string/title_spin"
         android:layout_marginTop="30dp"
-
         android:layout_height="wrap_content" />
 
 

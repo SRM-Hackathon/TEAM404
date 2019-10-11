@@ -21,6 +21,8 @@ import android.widget.Toast;
 
 import org.altbeacon.beacon.Beacon;
 import org.altbeacon.beacon.BeaconConsumer;
+import org.altbeacon.beacon.BeaconData;
+import org.altbeacon.beacon.BeaconDataNotifier;
 import org.altbeacon.beacon.BeaconManager;
 import org.altbeacon.beacon.BeaconParser;
 import org.altbeacon.beacon.BleNotAvailableException;
@@ -30,11 +32,13 @@ import org.altbeacon.beacon.RangeNotifier;
 import org.altbeacon.beacon.Region;
 import org.altbeacon.beacon.startup.BootstrapNotifier;
 import org.altbeacon.beacon.startup.RegionBootstrap;
+import org.altbeacon.beacon.utils.UrlBeaconUrlCompressor;
 
 import java.util.Collection;
 
 public class MainActivity extends AppCompatActivity implements BeaconConsumer,RangeNotifier {
-
+    String uuid,major,minor;
+    TextView text,text2;
     Button start,stop;
     BeaconManager beaconManager;
     Region beaconRegion;
@@ -45,7 +49,8 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer,Ra
 
         start = findViewById(R.id.start);
         stop = findViewById(R.id.stop);
-
+        text = findViewById(R.id.disp);
+        text2 = findViewById(R.id.text2);
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,6 +90,7 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer,Ra
     public void  stopMonitoring(){
 
         try {
+
             beaconManager.stopMonitoringBeaconsInRegion(beaconRegion);
             beaconManager.stopRangingBeaconsInRegion(beaconRegion);
         } catch (RemoteException e) {
@@ -109,13 +115,14 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer,Ra
             beaconManager.addMonitorNotifier(new MonitorNotifier() {
                 @Override
                 public void didEnterRegion(Region region) {
-                    showToast(region.getUniqueId());
+                  //  showToast(region.getUniqueId());
+                    text.setText(region.getUniqueId());
                     entryMessageRaised = true;
                 }
 
                 @Override
                 public void didExitRegion(Region region) {
-
+                        text2.setText(region.getUniqueId());
                 }
 
                 @Override
@@ -127,8 +134,22 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer,Ra
                 @Override
                 public void didRangeBeaconsInRegion(Collection<Beacon> beacons, Region region) {
                     if(!rangingMessageRaised && beacons != null && !beacons.isEmpty()){
-                        showToast(region.getUniqueId());
+//                        showToast(region.getUniqueId());
+                       // text2.setText(region.getUniqueId());
                     }
+                    //showToast("entered");
+                    for (org.altbeacon.beacon.Beacon beacon: beacons) {
+
+                        //UUID
+                        uuid = String.valueOf(beacon.getId1());
+
+                        //Major
+                        major = String.valueOf(beacon.getId2());
+
+                        //Minor
+                        minor = String.valueOf(beacon.getId3());
+                    }
+                    text2.setText(uuid + major + minor);
                     rangingMessageRaised = true;
                 }
             });
@@ -137,5 +158,8 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer,Ra
     @Override
     public void didRangeBeaconsInRegion(Collection<Beacon> collection, Region region) {
 
+
+        }
     }
-}
+
+

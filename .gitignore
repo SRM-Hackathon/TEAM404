@@ -12,3 +12,12 @@
 /captures
 .externalNativeBuild
 .cxx
+.idea
+out
+target
+*.iml
+log
+local.properties
+build
+android/libs
+/.gradle

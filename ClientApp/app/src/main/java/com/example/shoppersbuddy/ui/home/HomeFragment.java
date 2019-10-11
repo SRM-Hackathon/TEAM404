@@ -17,6 +17,12 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.shoppersbuddy.R;
+import com.example.shoppersbuddy.ui.Stores;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,14 +31,16 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemSelected
 
     private HomeViewModel homeViewModel;
     Spinner spinner;
-   // View v;
+    Stores stores;
+    ArrayList<String> list = new ArrayList<>();
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference("store_info");
+    TextView t1,t2,t3,t4;
+    // View v;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-
-
-
 
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel.class);
@@ -46,7 +54,11 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemSelected
         categories.add("Entertainment");
         categories.add("Electronics");
         categories.add("Cosmetics");
-
+        t1 = root.findViewById(R.id.text1);
+        t2 = root.findViewById(R.id.text2);
+        t3 = root.findViewById(R.id.text3);
+        t4 = root.findViewById(R.id.text4);
+        stores = new Stores();
 
         // Creating adapter for spinner
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, categories);
@@ -57,7 +69,27 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemSelected
         // attaching data adapter to spinner
         spinner.setAdapter(dataAdapter);
 
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
+                for(DataSnapshot ds: dataSnapshot.getChildren()){
+
+                    stores = ds.getValue(Stores.class);
+                    list.add(stores.getBrand_name());
+                }
+                t1.setText(list.get(0));
+                t2.setText(list.get(1));
+                t3.setText(list.get(2));
+                t4.setText(list.get(3));
+                Toast.makeText(getActivity(),list.get(1),Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
         homeViewModel.getText().observe(this, new Observer<String>() {
             @Override

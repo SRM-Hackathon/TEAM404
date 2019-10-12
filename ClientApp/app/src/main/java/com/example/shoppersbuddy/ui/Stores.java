@@ -7,20 +7,30 @@ public class Stores {
     private String content;
     private String location;
     private String map_img;
+    private String offer;
     private String timings;
 
     public Stores(){
 
     }
 
-    public Stores(String brand_image, String brand_name, String contact, String content, String location, String map_img, String timings) {
+    public Stores(String brand_image, String brand_name, String contact, String content, String location, String map_img,String offer, String timings) {
         this.brand_image = brand_image;
         this.brand_name = brand_name;
         this.contact = contact;
         this.content = content;
         this.location = location;
         this.map_img = map_img;
+        this.offer = offer;
         this.timings = timings;
+    }
+
+    public String getOffer() {
+        return offer;
+    }
+
+    public void setOffer(String offer) {
+        this.offer = offer;
     }
 
     public String getBrand_image() {
@@ -62,6 +72,7 @@ public class Stores {
     public void setLocation(String location) {
         this.location = location;
     }
+
 
     public String getMap_img() {
         return map_img;

@@ -3,192 +3,61 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="15dp"
+    android:background="#719192"
     android:id="@+id/recyclerview">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+
         <androidx.cardview.widget.CardView
     android:layout_width="match_parent"
+
     android:layout_height="wrap_content">
-    <RelativeLayout
-        android:padding="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp">
+
 
         <ImageView
             android:id="@+id/image1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+android:background="#719192"
+            android:layout_width="match_parent"
+            android:src="@drawable/disc1"
+            android:layout_height="200dp">
         </ImageView>
-        <TextView
-            android:text="nameeee"
-            android:id="@+id/name1"
-            android:textSize="20dp"
-            android:layout_below="@+id/image1"
-            android:layout_width="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_height="wrap_content"/>
-        <TextView
 
-            android:text="offerssssss"
-            android:layout_below="@+id/name1"
-            android:textSize="20dp"
-            android:layout_centerHorizontal="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-    </RelativeLayout>
 </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <RelativeLayout
-                android:padding="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp">
 
                 <ImageView
                     android:id="@+id/image2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:src="@drawable/disc2"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="200dp">
                 </ImageView>
-                <TextView
-                    android:text="nameeee"
-                    android:textSize="20dp"
-                    android:id="@+id/name2"
-                    android:layout_below="@+id/image2"
-                    android:layout_width="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_height="wrap_content"/>
-                <TextView
 
-                    android:text="offerssssss"
-                    android:textSize="20dp"
-                    android:layout_below="@+id/name2"
-                    android:layout_centerHorizontal="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
 
-            </RelativeLayout>
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <RelativeLayout
-                android:padding="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp">
-
-                <ImageView
-                    android:id="@+id/image3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                </ImageView>
-                <TextView
-                    android:text="nameeee"
-                    android:id="@+id/name3"
-                    android:textSize="20dp"
-                    android:layout_below="@+id/image3"
-                    android:layout_width="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_height="wrap_content"/>
-                <TextView
-
-                    android:text="offerssssss"
-                    android:layout_below="@+id/name3"
-                    android:textSize="20dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <RelativeLayout
-                android:padding="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp">
-
                 <ImageView
                     android:id="@+id/image4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/disc1"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp">
                 </ImageView>
-                <TextView
-                    android:text="nameeee"
-                    android:id="@+id/name4"
-                    android:textSize="20dp"
-                    android:layout_below="@+id/image4"
-                    android:layout_width="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_height="wrap_content"/>
-                <TextView
 
-                    android:text="offerssssss"
-                    android:textSize="20dp"
-                    android:layout_below="@+id/name4"
-                    android:layout_centerHorizontal="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-            </RelativeLayout>
         </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <RelativeLayout
-                android:padding="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp">
 
-                <ImageView
-                    android:id="@+id/image5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                </ImageView>
-                <TextView
-                    android:text="nameeee"
-                    android:id="@+id/name5"
-                    android:textSize="20dp"
-                    android:layout_below="@+id/image5"
-                    android:layout_width="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_height="wrap_content"/>
-                <TextView
-
-                    android:text="offerssssss"
-                    android:textSize="20dp"
-                    android:layout_below="@+id/name5"
-                    android:layout_centerHorizontal="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
 
     </LinearLayout>
 </ScrollView>

@@ -18,7 +18,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="230dp"
-            android:background="@drawable/construction"
+            android:background="@drawable/forum_mall1"
             android:id="@+id/background" />
 
         <ImageView

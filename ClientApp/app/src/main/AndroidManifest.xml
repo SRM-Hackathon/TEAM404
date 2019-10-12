@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.shoppersbuddy">
-    <!-- <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/> -->
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.StoreInfo"></activity>
+        <activity android:name=".Splash"></activity>
+        <activity android:name=".ui.StoreInfo" />
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main2" />
@@ -20,11 +21,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
-    <uses-permission android:name="android.permission.BLUETOOTH" /> <!-- <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/> -->
+    </application> <!-- <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/> -->
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
 
 </manifest>

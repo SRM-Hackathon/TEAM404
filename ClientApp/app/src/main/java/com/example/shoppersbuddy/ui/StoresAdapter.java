@@ -20,7 +20,7 @@ public class StoresAdapter extends RecyclerView.Adapter<StoresAdapter.StoresView
     private ArrayList<StoresItem>  StoresItemList;
 
     public static class StoresViewHolder extends RecyclerView.ViewHolder{
-        public TextView imageView;
+        public ImageView imageView;
         public TextView name;
        // public TextView about;
         public TextView location;
@@ -52,7 +52,7 @@ public class StoresAdapter extends RecyclerView.Adapter<StoresAdapter.StoresView
         final StoresItem currentItem = StoresItemList.get(position);
 
 
-        holder.imageView.setText(currentItem.getBrand_image());
+     //   holder.imageView.setText(currentItem.getBrand_image());
         holder.name.setText(currentItem.getBrand_name());
       //  holder.about.setText(currentItem.getContent());
         holder.location.setText(currentItem.getLocation());

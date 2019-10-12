@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="20dp"
+    android:backgroundTint="#719192"
+    app:cardCornerRadius="10dp"
     android:layout_marginTop="10dp">
 
     <RelativeLayout
@@ -10,22 +14,26 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:padding="20dp"
-        android:background="@android:color/holo_green_dark"
+        android:background="#333"
+
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp">
-        <TextView
+
+        <ImageView
+            android:id="@+id/image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/image"
-            android:layout_alignParentTop="true"
-            android:text="hello"/>
+
+            android:layout_alignParentTop="true" />
         <TextView
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
             android:layout_centerInParent="true"
+            android:textSize="30dp"
             android:layout_below="@+id/image"
             android:text="hellooo"
             />
@@ -50,6 +58,7 @@
             android:layout_centerHorizontal="true"
             android:id="@+id/location"
             android:textSize="20dp"
+            android:textColor="@android:color/white"
             android:text="hellogggg"
             android:layout_below="@+id/name"/>
 

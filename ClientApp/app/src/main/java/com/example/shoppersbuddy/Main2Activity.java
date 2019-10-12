@@ -49,6 +49,7 @@ public class Main2Activity extends AppCompatActivity implements BeaconConsumer, 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     Stores stores;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

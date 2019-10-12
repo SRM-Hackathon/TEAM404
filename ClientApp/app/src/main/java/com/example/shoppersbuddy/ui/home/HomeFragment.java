@@ -63,6 +63,7 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemSelected
         spinner.setPrompt("Category");
         // Spinner Drop down elements
         ArrayList<String> categories = new ArrayList<String>();
+        categories.add("Category");
         categories.add("Food");
         categories.add("Clothing");
         categories.add("Entertainment");

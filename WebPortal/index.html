@@ -34,33 +34,27 @@
         <section id="" style="margin-top: 80px;">
             <div class="container">
                 <div class="img-container">
-                    <img src="https://d166yc1y344avn.cloudfront.net/outletlogo/Zara.jpg" alt="">
+                    <img id="image" src="" alt="">
                 </div><!-- .img-container -->
                 <form action="">
                     <div class="form-group row">
                         <label for="name" class="col-sm-5">Name</label>
-                        <input type="text" class="form-control col-sm-6" name="name" placeholder="Enter store's name" required>
+                        <input id="name" type="text" class="form-control col-sm-6" name="name" placeholder="Enter store's name" required>
                     </div>
                     <div class="form-group row">
                         <label for="name" class="col-sm-5">Description</label>
-                        <textarea type="text" class="form-control col-sm-6" name="description" placeholder="Enter store's description" required rows="10"></textarea>
+                        <textarea id="description" type="text" class="form-control col-sm-6" name="description" placeholder="Enter store's description" required rows="10"></textarea>
                     </div>
                     <div class="form-group row">
                         <label for="name" class="col-sm-5">Offers</label>
-                        <input type="text" class="form-control col-sm-6" name="offer0" placeholder="Enter offer" required>
-                    </div>
-                    <div class="form-group row">
-                        <input type="text" class="form-control offset-sm-5 col-sm-6" name="offer1" placeholder="Enter offer" required>
-                    </div>
-                    <div class="form-group row">
-                        <input type="text" class="form-control offset-sm-5 col-sm-6" name="offer2" placeholder="Enter offer" required>
+                        <input id="offer" type="text" class="form-control col-sm-6" name="offer0" placeholder="Enter offer" required>
                     </div>
                     <div class="row">
                         <div class="col-sm-1 offset-sm-5"><button class="add">+</button></div><!-- .col-sm-1 offset-sm-6 -->
                     </div><!-- .row -->
                     <div class="form-group row">
                         <label for="name" class="col-sm-5">Contact</label>
-                        <textarea type="text" class="form-control col-sm-6" name="contact" placeholder="Enter store's contact info" required rows="6"></textarea>
+                        <textarea id="contact" type="text" class="form-control col-sm-6" name="contact" placeholder="Enter store's contact info" required rows="6"></textarea>
                     </div>
                     <div class="action-btn-container">
                         <button id="edit">Edit</button>
@@ -77,6 +71,7 @@
      https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-database.js"></script>
     <script>
     // Your web app's Firebase configuration
     var firebaseConfig = {
@@ -92,11 +87,28 @@
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
-    
+	var database = firebase.database();
+
+	var userId = firebase.auth().currentUser || 251;
+
+	firebase.database().ref('/store_info').once('value').then(function(snapshot) {
+		var res = snapshot.val()[userId];
+		console.log(res);
+		document.getElementById('image').src = res.brand_image;
+		document.getElementById('name').value = res.brand_name;
+		document.getElementById('description').value = res.content;
+		document.getElementById('offer').value = res.offer;
+		document.getElementById('contact').value = res.contact;
+
+	  	var name = (snapshot.val() && snapshot.val().username) || 'Anonymous';
+	  // ...
+	});
     function redirectIfLoggedOut() {
         firebase.auth().onAuthStateChanged(function(user) {
             if (!user) {
                 window.location.href = "login.html";
+            } else {
+
             }
         });
     }

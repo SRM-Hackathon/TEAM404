@@ -11,14 +11,14 @@
 <body>
     <div id="main-container">
         <!-- <div id="login-box"> -->
-        <form onsubmit="login();" >
+        <form action="#" onsubmit="return submitForm(event)">
             <div class="img-container"><img src="images/sblogo.png" alt="" height="100"></div><!-- .img-container -->
             <h2 class="text-center">Store Owner Portal</h2><!-- .text-center -->
             <div class="form-element">
-                <input type="text" name="username" placeholder="Enter your username" required>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
             </div><!-- .form-element -->
             <div class="form-element">
-                <input type="password" name="password" placeholder="Enter password" required>
+                <input type="password" id="password" name="password" placeholder="Enter password" required>
             </div><!-- .form-element -->
             <div id="form-btn-container">
                 <button type="submit" id="submit">Login</button>
@@ -26,9 +26,58 @@
         </form>
         <!-- </div>#login-box -->
     </div><!-- #main-container -->
-    <script src="js/custom_functions.js"></script>
-    <script>
-        
+     <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-auth.js"></script>
+    <script type="text/javascript">
+        // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyCAjMnsFHgoJa_OYsE2e1rcnRVSrcqD5SU",
+        authDomain: "shoppersbuddy-ca18a.firebaseapp.com",
+        databaseURL: "https://shoppersbuddy-ca18a.firebaseio.com",
+        projectId: "shoppersbuddy-ca18a",
+        storageBucket: "shoppersbuddy-ca18a.appspot.com",
+        messagingSenderId: "693519278030",
+        appId: "1:693519278030:web:d902cc9a9c333016dcd59f",
+        measurementId: "G-WX9MFZ3RYM"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    
+    function login(username, password) {
+        firebase.auth().signInWithEmailAndPassword(username, password).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // ...
+            console.log(errorCode);
+        });
+    }
+    function redirectIfLoggedIn() {
+        // var flag = false;
+        console.log("calling");
+        firebase.auth().onAuthStateChanged(function(user) {
+            console.log(user);
+            if (user) {
+                // console.log(user);
+                window.location.href = "index.html";
+            }
+        });
+    }
+    function submitForm(e) {
+        e.preventDefault();
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        login(username, password);
+        redirectIfLoggedIn();
+        console.log(isLoggedIn());
+        return false;
+    }
+    redirectIfLoggedIn();
     </script>
 </body>
 

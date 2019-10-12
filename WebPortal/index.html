@@ -7,7 +7,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Poppins|Roboto|PT+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ribeye|Poppins|Roboto|PT+Sans&display=swap" rel="stylesheet">
     <style>
         #mainnav{
 			background: #5CDB95;
@@ -19,10 +19,20 @@
 			display: none;
 		}
 
-		#acmicon{
-			width: 120px;
+		#logoicon{
+			width: 70px;
 		}
-
+		.navbar-brand {
+			color: white;
+			text-decoration: none;
+			font-family: Ribeye, serif;
+			font-weight: bold;
+			font-size: 32px;
+			vertical-align: baseline;
+		}
+		.navbar-brand:hover {
+			color: white;
+		}
 		.nav-item {
 			display: flex;
 			align-items: center;
@@ -101,7 +111,7 @@
     <div id="main-container">
         <nav class="navbar navbar-expand-lg fixed-top navbar-shrink" id="mainnav">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#hero"><img src="images/svce_acm_2.png" id="acmicon"></a>
+                <a class="navbar-brand" href="#hero"><img src="images/sblogo.png" id="logoicon"> Shoppers' Buddy</a>
                 <button class="navbar-toggler is-closed" type="button">
                     <i class="material-icons" id="menu-icon">menu</i>
                     <i class="material-icons hide" id="close-icon">close</i>

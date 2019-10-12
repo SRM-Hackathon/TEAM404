@@ -105,7 +105,7 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemSelected
                 }
 
 
-                Toast.makeText(getActivity(),stores.getOffer(),Toast.LENGTH_LONG).show();
+              //  Toast.makeText(getActivity(),stores.getOffer(),Toast.LENGTH_LONG).show();
 //                t1.setText(list.get(0));
 //                t2.setText(list.get(1));
 //                t3.setText(list.get(2));

@@ -23,6 +23,7 @@ public class Stores {
         this.map_img = map_img;
         this.offer = offer;
         this.timings = timings;
+
     }
 
     public String getOffer() {

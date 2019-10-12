@@ -1,0 +1,106 @@
+#mainnav {
+    background: #5CDB95;
+    transition: 300ms;
+    width: 100%;
+}
+
+.hide {
+    display: none;
+}
+
+#logoicon {
+    width: 70px;
+}
+
+.navbar-brand {
+    color: white;
+    text-decoration: none;
+    font-family: Ribeye, serif;
+    font-weight: bold;
+    font-size: 32px;
+    vertical-align: baseline;
+}
+
+.navbar-brand:hover {
+    color: white;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    margin-left: 24px;
+}
+
+.nav-link {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    color: #05386B;
+}
+
+.btn-nav-link {
+    padding: 0;
+}
+
+.img-container {
+    justify-content: center;
+    display: flex;
+}
+
+input,
+textarea {
+    border-color: #5CDB95 !important;
+    font-family: Roboto;
+}
+
+label {
+    text-align: right;
+    padding-right: 35px !important;
+    font-family: PT Sans;
+    font-weight: bold;
+}
+
+button.add {
+    margin-bottom: 50px;
+    border-radius: 50%;
+    border: none;
+    width: 40px;
+    height: 40px;
+    background: #5CDB95;
+    font-weight: bold;
+    color: white;
+}
+
+.action-btn-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.action-btn-container button {
+    min-width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    font-family: Poppins;
+    border: none;
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+}
+
+button#edit {
+    background: #5CDB95;
+}
+
+button#cancel {
+    display: none;
+    background: none;
+    border: 2px solid #5CDB95;
+    color: black;
+    font-weight: normal;
+}
+
+button#save {
+    display: none;
+    background: #5CDB95;
+}

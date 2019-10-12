@@ -8,103 +8,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Ribeye|Poppins|Roboto|PT+Sans&display=swap" rel="stylesheet">
-    <style>
-        #mainnav{
-			background: #5CDB95;
-			transition: 300ms;
-			width: 100%;
-		}
-
-		.hide {
-			display: none;
-		}
-
-		#logoicon{
-			width: 70px;
-		}
-		.navbar-brand {
-			color: white;
-			text-decoration: none;
-			font-family: Ribeye, serif;
-			font-weight: bold;
-			font-size: 32px;
-			vertical-align: baseline;
-		}
-		.navbar-brand:hover {
-			color: white;
-		}
-		.nav-item {
-			display: flex;
-			align-items: center;
-			margin-left: 24px;
-		}
-		.nav-link {
-			font-family: 'Poppins', sans-serif;
-			font-weight: bold;
-			font-size: 24px;
-			text-align: center;
-			color: #05386B;
-		}
-
-		.btn-nav-link {
-			padding: 0;
-		}
-
-		.img-container {
-			justify-content: center;
-			display: flex;
-		}
-
-		input, textarea {
-			border-color: #5CDB95 !important;
-			font-family: Roboto;
-		}
-		label {
-			text-align: right;
-			padding-right: 35px !important;
-			font-family: PT Sans;
-			font-weight: bold;
-		}
-		button.add {
-			margin-bottom: 50px;
-			border-radius: 50%;
-			border: none;
-			width: 40px;
-			height: 40px;
-			background: #5CDB95;
-			font-weight: bold;
-			color: white;
-		}
-		.action-btn-container {
-			display: flex;
-			justify-content: space-around;
-		}
-		.action-btn-container button {
-			min-width: 100px;
-			height: 40px;
-			border-radius: 10px;
-			font-family: Poppins;
-			border: none;			
-			font-weight: bold;
-			color: white;
-			font-size: 20px;
-		}
-
-		button#edit {
-			background: #5CDB95;
-		}
-		button#cancel {
-			display: none;
-			background: none;
-			border: 2px solid #5CDB95;
-			color: black;
-			font-weight: normal;
-		}
-		button#save {
-			display: none;
-			background: #5CDB95;
-		}
-    </style>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
@@ -121,7 +25,7 @@
                         <li class="nav-item"><a href="#" class="nav-link" style="color: white;">Store Info</a></li><!-- .nav-item -->
                         <li class="nav-item"><a href="stats.html" class="nav-link">View Stats</a></li><!-- .nav-item -->
                         <li class="nav-item">
-                            <a href="" class="nav-link">Logout</a>
+                            <a href="" class="nav-link" onclick="logout();">Logout</a>
                         </li><!-- .nav-item -->
                     </ul>
                 </div>
@@ -167,6 +71,30 @@
             </div><!-- .container -->
         </section><!-- .jumbotron -->
     </div><!-- #main-container -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-auth.js"></script>
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyCAjMnsFHgoJa_OYsE2e1rcnRVSrcqD5SU",
+        authDomain: "shoppersbuddy-ca18a.firebaseapp.com",
+        databaseURL: "https://shoppersbuddy-ca18a.firebaseio.com",
+        projectId: "shoppersbuddy-ca18a",
+        storageBucket: "shoppersbuddy-ca18a.appspot.com",
+        messagingSenderId: "693519278030",
+        appId: "1:693519278030:web:d902cc9a9c333016dcd59f",
+        measurementId: "G-WX9MFZ3RYM"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    
+    
+    </script>
 </body>
 
 </html>
